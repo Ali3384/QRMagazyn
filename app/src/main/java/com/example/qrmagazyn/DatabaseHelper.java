@@ -14,9 +14,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     public static final String TABLE_WAREHOUSE = "warehouse";
-    public static final String COLUMN_ID = "id";
-    public static final String COLUMN_ITEM_CODE = "item_code";
-    public static final String COLUMN_ITEM_PLACE = "item_place";
+    public static final String COLUMN_ID = "Item_Id";
+    public static final String COLUMN_ITEM_CODE = "Item_Code";
+    public static final String COLUMN_ITEM_PLACE = "Item_Place";
 
     private final Context context;
 
