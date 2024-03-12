@@ -76,9 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        binding.fab.setOnClickListener(v -> {
-            checkPermissionAndShowActivity(this);
-        });
+        binding.fab.setOnClickListener(v -> checkPermissionAndShowActivity(this));
     }
 
     private void checkPermissionAndShowActivity(Context context) {
