@@ -10,7 +10,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import com.example.qrmagazyn.databinding.ActivityMainBinding;
@@ -33,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private ActivityResultLauncher<ScanOptions> qrCodeLauncher = registerForActivityResult(new ScanContract(), result ->{
     if (result.getContents() != null) {
         // If QR code is scanned successfully, retrieve the item place from the database
-        String itemCode = result.getContents();
-        String itemPlace = dataSource.getItemPlaceByCode(itemCode);
+        String itemId = result.getContents();
+        String itemPlace = dataSource.getItemPlaceById(itemId);
         if (itemPlace != null) {
             setResult(itemPlace);
         } else {

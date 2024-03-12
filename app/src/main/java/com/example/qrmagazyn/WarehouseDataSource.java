@@ -28,12 +28,12 @@ public class WarehouseDataSource {
         dbHelper.close();
     }
 
-    public String getItemPlaceByCode(String itemCode) {
+    public String getItemPlaceById(String itemId) {
         String itemPlace = null;
         String query = "SELECT " + dbHelper.getItemPlaceColumnName() +
                 " FROM " + DatabaseHelper.TABLE_WAREHOUSE +
-                " WHERE " + dbHelper.getItemCodeColumnName() + " = ?";
-        Cursor cursor = database.rawQuery(query, new String[]{itemCode});
+                " WHERE " + dbHelper.COLUMN_ID + " = ?";
+        Cursor cursor = database.rawQuery(query, new String[]{itemId});
         if (cursor != null && cursor.moveToFirst()) {
             int columnIndex = cursor.getColumnIndex(dbHelper.getItemPlaceColumnName());
             if (columnIndex >= 0) { // Check if column index is valid
